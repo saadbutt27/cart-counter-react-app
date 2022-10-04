@@ -19,7 +19,20 @@ class Counter extends Component {
   //     fontSize: 50,
   //     fontWeight: "bold",
   //   };
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("prevProps", prevProps);
+    console.log("prevState", prevState);
+    if (prevProps.counter.value !== this.props.counter.value) {
+    }
+  }
+
+  componentWillUnmount() {
+    console.log("Counter - Unmmount");
+  }
+  
   render() {
+    console.log("Counter - Rendered");
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
